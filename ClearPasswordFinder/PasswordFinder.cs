@@ -2,7 +2,7 @@
 
 public class PasswordFinder
 {
-    private static string[] Patterns = { "-P", "pwd", "password", "pass", "secret" };
+    private static string[] Patterns = { "-P", "pwd", "password", "pass", "secret", "key", "pin"};
     // Process all files in the directory passed in, recurse on any directories
     // that are found, and process the files they contain.
     public static void ProcessDirectory(string targetDirectory)
@@ -18,7 +18,6 @@ public class PasswordFinder
             ProcessDirectory(subdirectory);
     }
 
-    // Insert logic for processing found files here.
     public static void ProcessFile(string path)
     {
         var foundOccurence = false;
@@ -28,7 +27,6 @@ public class PasswordFinder
             if (Patterns.Contains(word))
             {
                 foundOccurence = true;
-                Console.WriteLine("found occurrence of possible password in: {0}", word);
             }
         }));
         if(foundOccurence)
