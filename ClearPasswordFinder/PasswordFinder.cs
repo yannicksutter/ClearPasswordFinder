@@ -17,7 +17,7 @@ public class PasswordFinder
         foreach(string subdirectory in subdirectoryEntries)
             ProcessDirectory(subdirectory);
     }
-
+    //No comment
     public static void ProcessFile(string path)
     {
         var foundOccurence = false;
